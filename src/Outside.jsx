@@ -18,7 +18,7 @@ export default function Outside({ currentLocation, setCurrentLocation }) {
           onClick={(e) => changeLocation(e.target.id)}
           className="label"
         >
-          ={'<'}Home
+          {'<'}=Home
         </button>
       </div>
       <div className="padding">

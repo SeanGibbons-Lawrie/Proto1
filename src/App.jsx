@@ -2,6 +2,7 @@ import './styles.css'
 import { useState } from 'react'
 import Home from './Home'
 import Outside from './Outside'
+import Status from '../Status'
 
 export default function App() {
   const [currentLocation, setCurrentLocation] = useState('home')
@@ -19,28 +20,21 @@ export default function App() {
       />
     ),
   }
+  const initialPlayerStatus = {
+    name: 'You',
+    lv: 1,
+    hp: 50,
+    maxHp: 50,
+    exp: 0,
+    maxExp: 50,
+    str: 2,
+  }
+
+  const [playerStatus, setPlayerStatus] = useState(initialPlayerStatus)
 
   return (
     <div className="game">
-      <div className="status">
-        <div className="label">
-          <label>
-            You {/*{name} */}
-            <br />
-            Lv: 1 &apos;Nobody&apos;
-          </label>
-        </div>
-        {/*Lv:{level} '{title}' */}
-        <div className="padding">
-          <label className="label">HP: 50 / 50</label>
-        </div>
-        <div className="padding">
-          <label className="label">EXP: 0 / 50</label>
-        </div>
-        <div className="padding">
-          <label className="label">STR: 2</label>
-        </div>
-      </div>
+      <Status playerStatus={playerStatus} setPlayerStatus={setPlayerStatus} />
       <div>{locations[currentLocation]}</div>
     </div>
   )
