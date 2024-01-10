@@ -1,11 +1,8 @@
-export default function Outside({ currentLocation, setCurrentLocation }) {
-  function changeLocation(locationDestination) {
-    setCurrentLocation(locationDestination)
-    console.log(locationDestination)
-  }
+import { changeLocation } from '../../shared/helpers'
 
+export default function Outside({ setCurrentLocation }) {
   return (
-    <div className="outside">
+    <div className="location">
       <div className="padding">
         <label className="label">Location: Outside</label>
       </div>
@@ -15,14 +12,20 @@ export default function Outside({ currentLocation, setCurrentLocation }) {
       <div className="padding">
         <button
           id="home"
-          onClick={(e) => changeLocation(e.target.id)}
+          onClick={(e) => changeLocation(e.target.id, setCurrentLocation)}
           className="label"
         >
           {'<'}=Home
         </button>
       </div>
       <div className="padding">
-        <button className="label">Button 2</button>
+        <button
+          id="dojo"
+          onClick={(e) => changeLocation(e.target.id, setCurrentLocation)}
+          className="label"
+        >
+          ={'>'}Dojo
+        </button>
       </div>
       <div className="padding">
         <button className="label">Button 3</button>

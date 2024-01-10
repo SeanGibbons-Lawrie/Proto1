@@ -1,10 +1,8 @@
-export default function Home({ currentLocation, setCurrentLocation }) {
-  function changeLocation(locationDestination) {
-    setCurrentLocation(locationDestination)
-    console.log(locationDestination)
-  }
+import { changeLocation } from '../../shared/helpers'
+
+export default function Home({ setCurrentLocation }) {
   return (
-    <div className="home">
+    <div className="location">
       <div className="padding">
         <label className="label">Location: Home</label>
       </div>
@@ -14,7 +12,7 @@ export default function Home({ currentLocation, setCurrentLocation }) {
       <div className="padding">
         <button
           id="outside"
-          onClick={(e) => changeLocation(e.target.id)}
+          onClick={(e) => changeLocation(e.target.id, setCurrentLocation)}
           className="label"
         >
           ={'>'}Outside

@@ -11,11 +11,11 @@ body {
   margin: 0 auto;
 }
 
-.game {
+.flexRow {
   display: flex;
 }
 
-.home {
+.location {
   background: #340f3698;
   border: 1px solid hsl(200, 100%, 50%);
   padding: 0.75em;
@@ -24,8 +24,9 @@ body {
   outline: none;
 }
 
-.outside {
-  background: #16360f98;
+.combat {
+  width: 300px;
+  background: #3c143d71;
   border: 1px solid hsl(200, 100%, 50%);
   padding: 0.75em;
   margin: 0.5em;
